@@ -1,14 +1,14 @@
 file '/etc/motd' do
   content 'Welcome to ApacheWeb Server'
   mode '0755'
-  owner 'web_admin'
-  group 'web_admin'
+  owner 'root'
+  group 'root'
 end
 
 cookbook_file '/var/www/index.html' do
   source 'index.html'
-  owner 'web_admin'
-  group 'web_admin'
+  owner 'apache'
+  group 'apache'
   mode '0755'
   action :create
 end
@@ -17,8 +17,11 @@ package 'httpd' do
   action :install
 end
 
-template '/etc/httpd/httpd.conf' do
+template '/etc/httpd/conf/httpd.conf' do
   source 'httpd.conf.erb'
+  mode '0440'
+  owner 'root'
+  group 'root'  
   variables(
     :httpd_port => node['httpd']['port']
   )
