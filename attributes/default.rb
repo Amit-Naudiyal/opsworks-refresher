@@ -1,1 +1,1 @@
-node['httpd']['port'] = 8080
+default['httpd']['port'] = '8080'
