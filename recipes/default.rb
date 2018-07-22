@@ -5,16 +5,16 @@ file '/etc/motd' do
   group 'root'
 end
 
+package 'httpd' do
+  action :install
+end
+
 cookbook_file '/var/www/index.html' do
   source 'index.html'
   owner 'apache'
   group 'apache'
   mode '0755'
   action :create
-end
-
-package 'httpd' do
-  action :install
 end
 
 template '/etc/httpd/conf/httpd.conf' do
