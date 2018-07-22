@@ -21,10 +21,7 @@ template '/etc/httpd/conf/httpd.conf' do
   source 'httpd.conf.erb'
   mode '0440'
   owner 'root'
-  group 'root'  
-  variables(
-    httpd_port: node['httpd']['port']
-  )
+  group 'root'
 end
 
 service "httpd" do
