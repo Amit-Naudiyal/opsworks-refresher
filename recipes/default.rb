@@ -23,7 +23,7 @@ template '/etc/httpd/conf/httpd.conf' do
   owner 'root'
   group 'root'  
   variables(
-    :httpd_port => node['httpd']['port']
+    httpd_port: node['httpd']['port']
   )
 end
 
