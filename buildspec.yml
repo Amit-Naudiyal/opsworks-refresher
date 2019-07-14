@@ -20,4 +20,4 @@ artifacts:
     artifact1:
       files:
         - '**/*'
-      name: secondary-artifact-name-1
+      name: mysecondartifact
