@@ -17,7 +17,7 @@ artifacts:
     - '**/*'
   base-directory: files
   secondary-artifacts:
-    artifact1:
+    mysecondartifact:
+      base-directory: files
       files:
         - '**/*'
-      name: mysecondartifact
